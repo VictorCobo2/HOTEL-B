@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'coreapi',
 
     'habitaciones',
-    'reservas'
+    'reservas',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'HOTEL_B.urls'
@@ -107,7 +108,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #CORS autorization
-CORS_ALLOWED_ORIGINS = []
+CORS_ORIGIN_WHITELIST = (
+    "http://localhost:5174",
+    "http://localhost:5173",
+)
+
 
 
 # Internationalization
